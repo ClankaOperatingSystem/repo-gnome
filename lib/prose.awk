@@ -22,6 +22,7 @@ task { next }
 /^[ \t]*#/ && !/^[ \t]*#\+/ { next }
 { judge(FILENAME, FNR, $0) }
 function report(file, line, message, text) {
+  sub(/^\.\//, "", file)
   sub(/^[ \t]+/, "", text)
   if (length(text) > 80) text = substr(text, 1, 80)
   print file ":" line ": " message ": " text
