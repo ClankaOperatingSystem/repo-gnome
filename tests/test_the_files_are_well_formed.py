@@ -1,4 +1,4 @@
-"""Check every file of the product against the formats its consumers
+"""Check every file of the gnome against the formats its consumers
 read, before a pull request is opened: the doctrine, the policies, the
 manifest, the declaration and the cases, in the terms README.md gives.
 The three checks in bin/ are run over their own cases, and must report

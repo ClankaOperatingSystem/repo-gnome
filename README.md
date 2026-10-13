@@ -5,6 +5,9 @@ its work. A doctrine of clauses, a policy for each judgement, cases that
 test the judge, three checks that need no model, and a skill that applies
 them.
 
+This repository is a gnome: it implements the gnome protocol, which
+bugflow's `docs/policy-package.md` specifies.
+
 Two things read this repository and nothing in it is written for one
 alone:
 
@@ -21,8 +24,7 @@ alone:
 
 - **A bugflow server** judges pull requests by it when a binding
   repository deploys it, with `declarations.toml` saying which
-  repositories it applies to. bugflow's `docs/policy-package.md` says
-  what the server reads.
+  repositories it applies to.
 
 ## What is here
 
@@ -31,7 +33,7 @@ alone:
 | `doctrine/*.md` | The doctrine, read in filename order as one document |
 | `policies/CN-*.md` | One policy each: header, instructions, calibration notes |
 | `cases/CN-*/*.md` | The cases of each policy: a document and the answer a correct judge gives |
-| `manifest.md` | The product's id, subjects and policies |
+| `manifest.md` | The gnome's id, subjects and policies |
 | `bin/canon-*` | The checks: commands that answer three policies without a model |
 | `lib/` | What the checks share |
 | `skills/canon-tidy/` | The skill that applies the doctrine to a scope |

@@ -4,7 +4,7 @@ subjects: document/file, scope/canon
 policies: CN-01, CN-02, CN-03, CN-04, CN-05, CN-06, CN-07, CN-08, CN-09, CN-10
 ---
 
-This file describes the product to whatever reads it. The lines above
+This file describes the gnome to whatever reads it. The lines above
 the three dashes are read by a bugflow server and by the format tests;
 the text below is for a person.
 
