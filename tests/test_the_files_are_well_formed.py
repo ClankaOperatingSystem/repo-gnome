@@ -13,7 +13,7 @@ from pathlib import Path
 import pytest
 
 ROOT = Path(__file__).resolve().parent.parent
-SKILL = ROOT / "skills" / "canon-tidy"
+SKILL = ROOT / "skills" / "repo-gnome-tidy"
 SCRIPTS = SKILL / "scripts"
 POLICIES = sorted((SKILL / "references" / "policies").glob("*.md"))
 DOCTRINE = sorted((SKILL / "references" / "doctrine").glob("*.md"))
@@ -202,7 +202,7 @@ def test_each_check_script_answers_a_checked_policy() -> None:
 
 def test_every_skill_carries_the_methodologys_prefix() -> None:
     for skill in (ROOT / "skills").iterdir():
-        assert skill.name.startswith("canon-"), skill.name
+        assert skill.name.startswith("repo-gnome-"), skill.name
         assert (skill / "SKILL.md").is_file()
 
 

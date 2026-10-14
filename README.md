@@ -1,4 +1,4 @@
-# The canon doctrine
+# repo-gnome
 
 Standards for canon: the documents a repository maintains and reads to do
 its work. A doctrine of clauses, a policy for each judgement, cases that
@@ -17,10 +17,10 @@ alone:
   tag:
 
       methodologies:
-        - source: git@github.com:ClankaOperatingSystem/canon-doctrine.git
+        - source: git@github.com:ClankaOperatingSystem/repo-gnome.git
           ref: TAG
 
-  The skills command-line tool copies `skills/canon-tidy/` into the
+  The skills command-line tool copies `skills/repo-gnome-tidy/` into the
   garden's skills, and the garden's lint runs the checks in its
   `scripts/`.
 
@@ -32,11 +32,11 @@ alone:
 
 | Path | What it is |
 |---|---|
-| `skills/canon-tidy/` | The skill that applies the doctrine to a scope |
-| `skills/canon-tidy/references/doctrine/*.md` | The doctrine, read in filename order as one document |
-| `skills/canon-tidy/references/policies/CN-*.md` | One policy each: header, instructions, calibration notes |
-| `skills/canon-tidy/scripts/check-*` | The checks: scripts that answer three policies without a model |
-| `skills/canon-tidy/scripts/lib/` | What the checks share |
+| `skills/repo-gnome-tidy/` | The skill that applies the doctrine to a scope |
+| `skills/repo-gnome-tidy/references/doctrine/*.md` | The doctrine, read in filename order as one document |
+| `skills/repo-gnome-tidy/references/policies/CN-*.md` | One policy each: header, instructions, calibration notes |
+| `skills/repo-gnome-tidy/scripts/check-*` | The checks: scripts that answer three policies without a model |
+| `skills/repo-gnome-tidy/scripts/lib/` | What the checks share |
 | `cases/CN-*/*.md` | The cases of each policy: a document and the answer a correct judge gives |
 | `manifest.md` | The gnome's id, subjects and policies |
 | `tests/` | The checks that every file is in the format the consumers read |
