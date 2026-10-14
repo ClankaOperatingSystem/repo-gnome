@@ -48,4 +48,5 @@ Write each explanation in one sentence, naming the home. Return no
 violations when the documents comply.
 === calibration
 Not measured. This policy reads a whole scope, which a pull request judge
-does not render; it is applied by the canon-tidy skill.
+does not render; it is applied by the repo-gnome-tidy
+skill.
