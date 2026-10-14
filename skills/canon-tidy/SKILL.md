@@ -5,11 +5,11 @@ description: Tidy a scope's canon against the canon doctrine, so that its docume
 
 # Tidy canon
 
-The doctrine is in this methodology's `doctrine/` directory, beside the
-`skills/` directory this file is in; its policies are in `policies/`,
-one judgement each, and the checks in `bin/` answer three of them. Read
-the doctrine from the checkout at the start, so the clauses in force are
-the current ones. Do not work from memory of them.
+The doctrine is in `references/doctrine/`, beside this file; its
+policies are in `references/policies/`, one judgement each, and the
+checks in `scripts/` answer three of them. Read the doctrine at the
+start, so the clauses in force are the current ones. Do not work from
+memory of them.
 
 Run it when asked. It is heavy for a whole scope; a pass over one
 document or one session's changes is light.
@@ -20,9 +20,9 @@ document or one session's changes is light.
    CANON-8 are the checks' answers. Count the scope's documents and words,
    leaving out archives, attics and underscore directories.
 2. **Read the whole scope first**, then apply each judged policy in
-   `policies/` to each document, as the policy's instructions say: report
-   a finding only where the words can be quoted, and where a passage is
-   ambiguous it complies.
+   `references/policies/` to each document, as the policy's instructions
+   say: report a finding only where the words can be quoted, and where a
+   passage is ambiguous it complies.
 3. **Propose by class.** Group the findings by clause, and put each class
    to the person with a sample in context and the rewrite the doctrine
    asks for. A ruling on a class authorises its repair wherever it

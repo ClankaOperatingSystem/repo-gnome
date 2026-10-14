@@ -5,7 +5,7 @@
 # judge(FILENAME, FNR, line), which the check's own awk file defines, and
 # at the end exits 1 if the check set any finding, else 0.
 #
-#   awk -f lib/prose.awk -f bin/check.awk FILE...
+#   awk -f lib/prose.awk -f lib/check.awk FILE...
 FNR == 1 { skip = 0; drawer = 0; task = 0 }
 /^[ \t]*#\+(begin|BEGIN)_(src|SRC|example|EXAMPLE|quote|QUOTE)/ { skip = 1; next }
 /^[ \t]*#\+(end|END)_(src|SRC|example|EXAMPLE|quote|QUOTE)/ { skip = 0; next }

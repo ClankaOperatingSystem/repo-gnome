@@ -10,7 +10,7 @@ ceiling: warn
 implemented: check
 clause: CANON-7 status in canon
 ---
-Answered by the check `canon-status-words` in `bin/`, which reports a
+Answered by the check `check-status-words` in `scripts/`, which reports a
 line of prose holding one of these, under CANON-7, graded warn: "not yet",
 "planned:", "none yet", "is not built", "has been used once", "remains to
 be", "await", "awaits", "untested", "never run", "for now", "interim",
