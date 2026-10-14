@@ -13,16 +13,16 @@ and a maintainer's tasks.
 Two things read this repository and nothing in it is written for one
 alone:
 
-- **A garden node** declares it as a methodology, beneath its
-  methodologies path, at a directory named `canon`:
+- **A garden** declares it as a methodology in its configuration, at a
+  tag:
 
-      children:
-        - path: methodologies/canon
-          remote: git@github.com:ClankaOperatingSystem/canon-doctrine.git
+      methodologies:
+        - source: git@github.com:ClankaOperatingSystem/canon-doctrine.git
+          ref: TAG
 
-  The node's tree tool links `skills/canon-tidy` into its skills and the
-  checks in `bin/` into its commands, and its lint runs the checks that
-  `methodology.yaml` names. poslib's `doc/pos-methodology.txt` says how.
+  The skills command-line tool copies `skills/canon-tidy/` into the
+  garden's skills, and the garden's lint runs the checks in its
+  `scripts/`.
 
 - **A bugflow server** judges pull requests by it when a binding
   repository deploys it, with `declarations.toml` saying which
@@ -32,24 +32,28 @@ alone:
 
 | Path | What it is |
 |---|---|
-| `doctrine/*.md` | The doctrine, read in filename order as one document |
-| `policies/CN-*.md` | One policy each: header, instructions, calibration notes |
+| `skills/canon-tidy/` | The skill that applies the doctrine to a scope |
+| `skills/canon-tidy/references/doctrine/*.md` | The doctrine, read in filename order as one document |
+| `skills/canon-tidy/references/policies/CN-*.md` | One policy each: header, instructions, calibration notes |
+| `skills/canon-tidy/scripts/check-*` | The checks: scripts that answer three policies without a model |
+| `skills/canon-tidy/scripts/lib/` | What the checks share |
 | `cases/CN-*/*.md` | The cases of each policy: a document and the answer a correct judge gives |
 | `manifest.md` | The gnome's id, subjects and policies |
-| `bin/canon-*` | The checks: commands that answer three policies without a model |
-| `lib/` | What the checks share |
-| `skills/canon-tidy/` | The skill that applies the doctrine to a scope |
-| `methodology.yaml` | The declaration a garden's lint reads: the checks to run |
 | `tests/` | The checks that every file is in the format the consumers read |
+
+The doctrine, the policies and the checks are inside the skill's
+directory because the skills command-line tool copies a skill's
+directory and nothing outside it.
 
 ## Words
 
-- Doctrine: the standard, in `doctrine/`, joined in filename order.
+- Doctrine: the standard, in `references/doctrine/`, joined in filename
+  order.
 - Clause: one rule of the doctrine, with an id such as `CANON-3`. An id is
   never reused.
 - Policy: one question asked about a document, and the clauses it judges.
   A policy whose header says `implemented: check` is answered by the
-  command its instructions name, in `bin/`, not by a model.
+  script its instructions name, in `scripts/`, not by a model.
 - Subject: the evidence a policy reads. `document/file` is one document;
   `scope/canon` is every document of a scope, which a pull request judge
   does not render.
@@ -67,6 +71,6 @@ and a case. The tests here check every file against it.
 
     uv run --with pytest pytest -q
 
-checks every file against the formats. The three commands in `bin/` run
-in any directory, read its Org and Markdown files, and print findings as
-`FILE:LINE: MESSAGE`, exit 1 when there are any.
+checks every file against the formats. The three scripts in `scripts/`
+run in any directory, read its Org and Markdown files, and print
+findings as `FILE:LINE: MESSAGE`, exit 1 when there are any.

@@ -10,7 +10,7 @@ ceiling: warn
 implemented: check
 clause: CANON-8 quoted authority
 ---
-Answered by the check `canon-quoted-authority` in `bin/`, which reports a
+Answered by the check `check-quoted-authority` in `scripts/`, which reports a
 line of prose that frames a quotation as its author's authority, under
 CANON-8, graded warn: "in NAME's words", "in NAME's formulation", "NAME's
 words", "as NAME said", "as NAME put it", "NAME said:", "NAME wrote:", and
