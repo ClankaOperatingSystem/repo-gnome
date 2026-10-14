@@ -1,6 +1,7 @@
 """Check every file of the gnome against the formats its consumers
 read, before a pull request is opened: the doctrine, the policies, the
-manifest, the declaration and the cases, in the terms README.md gives.
+manifest, the declaration and the cases, in the terms bugflow's
+docs/policy-package.md gives.
 The three checks in bin/ are run over their own cases, and must report
 each seeded case and no clean one.
 """
