@@ -17,8 +17,8 @@ the text below is for a person.
   only when the server's declarations also list it for that repository;
   the canon-tidy skill applies them all.
 - A policy whose header says `implemented: check` is answered by a
-  command in `bin/`, which its instructions name, and never by a model.
-  `methodology.yaml` names the commands, and the lint of a node that
-  declares this methodology runs them. A server has none of them, so a
+  script in `skills/canon-tidy/scripts/`, which its instructions name,
+  and never by a model. The lint of a garden that installs the skill
+  runs each script named `check-NAME`. A server has none of them, so a
   server refuses a declaration naming such a policy; it judges the other
   seven.

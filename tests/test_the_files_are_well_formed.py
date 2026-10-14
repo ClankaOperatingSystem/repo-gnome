@@ -1,9 +1,8 @@
 """Check every file of the gnome against the formats its consumers
 read, before a pull request is opened: the doctrine, the policies, the
-manifest, the declaration and the cases, in the terms bugflow's
-docs/policy-package.md gives.
-The three checks in bin/ are run over their own cases, and must report
-each seeded case and no clean one.
+manifest and the cases, in the terms bugflow's docs/policy-package.md
+gives. The three checks in the skill's scripts/ are run over their own
+cases, and must report each seeded case and no clean one.
 """
 
 import re
@@ -14,8 +13,10 @@ from pathlib import Path
 import pytest
 
 ROOT = Path(__file__).resolve().parent.parent
-POLICIES = sorted((ROOT / "policies").glob("*.md"))
-DOCTRINE = sorted((ROOT / "doctrine").glob("*.md"))
+SKILL = ROOT / "skills" / "canon-tidy"
+SCRIPTS = SKILL / "scripts"
+POLICIES = sorted((SKILL / "references" / "policies").glob("*.md"))
+DOCTRINE = sorted((SKILL / "references" / "doctrine").glob("*.md"))
 CASES = sorted((ROOT / "cases").glob("*/*.md"))
 
 POLICY_REQUIRED = (
@@ -162,7 +163,7 @@ def test_the_policy_ids_are_distinct() -> None:
     assert len(ids) == len(set(ids))
 
 
-# The manifest and the declaration
+# The manifest and the scripts
 
 
 def test_the_manifest_lists_every_policy_once() -> None:
@@ -181,21 +182,22 @@ def checked_policies() -> dict[str, str]:
     for policy_id, policy in POLICY_BY_ID.items():
         if policy.get("implemented") != "check":
             continue
-        found = re.search(r"check `([a-z-]+)` in `bin/`", policy["instructions"])
+        found = re.search(
+            r"check `(check-[a-z-]+)` in `scripts/`", policy["instructions"]
+        )
         assert found, f"{policy_id} names no command"
         named[policy_id] = found.group(1)
     return named
 
 
-def test_each_checked_policy_names_a_command_that_exists() -> None:
+def test_each_checked_policy_names_a_script_that_exists() -> None:
     for policy_id, command in checked_policies().items():
-        assert (ROOT / "bin" / command).is_file(), f"no bin/{command}"
+        assert (SCRIPTS / command).is_file(), f"no scripts/{command}"
 
 
-def test_the_declaration_names_each_checked_policys_command() -> None:
-    text = (ROOT / "methodology.yaml").read_text()
-    declared = re.findall(r"^  - (\S+)$", text, re.MULTILINE)
-    assert sorted(declared) == sorted(checked_policies().values())
+def test_each_check_script_answers_a_checked_policy() -> None:
+    scripts = [path.name for path in SCRIPTS.glob("check-*")]
+    assert sorted(scripts) == sorted(checked_policies().values())
 
 
 def test_every_skill_carries_the_methodologys_prefix() -> None:
@@ -263,7 +265,7 @@ def test_the_check_answers_its_case(case: Path) -> None:
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(parsed["body"])
         run = subprocess.run(
-            [str(ROOT / "bin" / command)],
+            [str(SCRIPTS / command)],
             cwd=scratch,
             capture_output=True,
             text=True,
