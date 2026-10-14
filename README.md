@@ -6,7 +6,9 @@ test the judge, three checks that need no model, and a skill that applies
 them.
 
 This repository is a gnome: it implements the gnome protocol, which
-bugflow's `docs/policy-package.md` specifies.
+bugflow's [policy package](https://github.com/bugflow/bugflow/blob/master/docs/policy-package.md) specifies.
+[What a gnome is](https://github.com/bugflow/bugflow/blob/master/docs/gnomes.md) explains a gnome's parts, who reads each,
+and a maintainer's tasks.
 
 Two things read this repository and nothing in it is written for one
 alone:
@@ -56,22 +58,10 @@ alone:
 - Finding: one thing a judge or a check reports, quoting the words at
   fault and citing a clause, graded `warn` or `fail`.
 
-## The format of a case
+## The formats
 
-A header, a line of three dashes, and the document:
-
-    title: An entrance that dates a decision
-    expect: CANON-2
-    grade: warn
-    why: The sentence names the decider and the date beside the rule.
-    path: foss/index.org
-    ---
-    #+TITLE: FOSS
-    ...
-
-`path` is the document's path in its repository, which the subject
-`document/file` renders. A clean case has an empty `expect` and no
-`grade`. The `why` line is for a person; the judge is not shown it.
+The [policy package](https://github.com/bugflow/bugflow/blob/master/docs/policy-package.md) specifies the manifest, a policy file
+and a case. The tests here check every file against it.
 
 ## Checks
 
