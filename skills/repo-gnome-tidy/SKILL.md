@@ -1,6 +1,6 @@
 ---
-name: canon-tidy
-description: Tidy a scope's canon against the canon doctrine, so that its documents state the present and nothing else. Use when asked to tidy, groom, audit or review a scope's documents, or when the lint reports a canon finding. Not for sealing what leaves canon, which the archive skills do.
+name: repo-gnome-tidy
+description: Tidy a scope's canon against the repo-gnome doctrine, so that its documents state the present and nothing else. Use when asked to tidy, groom, audit or review a scope's documents, or when the lint reports a canon finding. Not for sealing what leaves canon, which the archive skills do.
 ---
 
 # Tidy canon
