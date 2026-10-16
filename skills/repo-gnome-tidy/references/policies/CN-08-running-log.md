@@ -29,6 +29,8 @@ How to judge:
   what each found, is an index and complies: "the journal: the latest
   handover and the dated record before it".
 - A task list complies, whatever its length.
+- A glossary, a list of definitions or a table of terms complies,
+  whatever its length. Its entries are terms, and nothing happened.
 - A section that states what the entries have in common, and keeps the
   entries as evidence for it, complies.
 - When a passage is ambiguous, it complies.
