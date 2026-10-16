@@ -16,9 +16,3 @@ the text below is for a person.
 - `policies` lists every policy. A policy judges a repository on a server
   only when the server's declarations also list it for that repository;
   the repo-gnome-tidy skill applies them all.
-- A policy whose header says `implemented: check` is answered by a
-  script in `skills/repo-gnome-tidy/scripts/`, which its instructions name,
-  and never by a model. The lint of a garden that installs the skill
-  runs each script named `check-NAME`. A server has none of them, so a
-  server refuses a declaration naming such a policy; it judges the other
-  seven.
