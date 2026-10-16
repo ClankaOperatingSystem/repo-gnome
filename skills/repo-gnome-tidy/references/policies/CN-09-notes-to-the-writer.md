@@ -38,6 +38,8 @@ How to judge:
   documentation method or a doctrine, is judged on sentences about itself
   only, not on its subject.
 - When a passage is ambiguous, it complies.
+- A passage whose explanation would say that it complies is not
+  reported. Report only a passage that breaks the clause.
 - Report each passage once.
 
 The intent: a reader is given what they need to act, and how the document
