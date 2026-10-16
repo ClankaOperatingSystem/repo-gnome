@@ -84,7 +84,7 @@ opens while doing the work: a specimen, a fixture, a dataset, a
 specification. Task bodies, which may hold state and quotations where
 canon prose does not.
 
-The narrative doctrine judges prose as it leaves a repository: commit
+pr-gnome's doctrine judges prose as it leaves a repository: commit
 messages, pull request descriptions, comments. Its clauses on narrating
 oneself, aphorism and tails of the form "X, not Y" are the same faults in
 canon, and a canon policy may list them beside these clauses.
