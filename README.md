@@ -32,23 +32,26 @@ alone:
 
 | Path | What it is |
 |---|---|
+| `doctrine/*.md` | The doctrine, read in filename order as one document |
+| `policies/CN-*.md` | One policy each: header, instructions, calibration notes |
 | `skills/repo-gnome-tidy/` | The skill that applies the doctrine to a scope |
-| `skills/repo-gnome-tidy/references/doctrine/*.md` | The doctrine, read in filename order as one document |
-| `skills/repo-gnome-tidy/references/policies/CN-*.md` | One policy each: header, instructions, calibration notes |
+| `skills/repo-gnome-tidy/references/` | A copy of `doctrine/` and `policies/`, written by `make skills` |
 | `skills/repo-gnome-tidy/scripts/check-*` | The checks: scripts that answer three policies without a model |
 | `skills/repo-gnome-tidy/scripts/lib/` | What the checks share |
 | `cases/CN-*/*.md` | The cases of each policy: a document and the answer a correct judge gives |
 | `manifest.md` | The gnome's id, subjects and policies |
+| `tools/compile.py` | What `make skills` runs |
 | `tests/` | The checks that every file is in the format the consumers read |
 
-The doctrine, the policies and the checks are inside the skill's
-directory because the skills command-line tool copies a skill's
-directory and nothing outside it.
+The doctrine and the policies are kept in `doctrine/` and `policies/`.
+The skills command-line tool copies a skill's directory and nothing
+outside it, so the skill carries a copy of both in its `references/`.
+After a change in `doctrine/` or `policies/`, run `make skills`. The
+tests fail if the copy is out of date.
 
 ## Words
 
-- Doctrine: the standard, in `references/doctrine/`, joined in filename
-  order.
+- Doctrine: the standard, in `doctrine/`, joined in filename order.
 - Clause: one rule of the doctrine, with an id such as `CANON-3`. An id is
   never reused.
 - Policy: one question asked about a document, and the clauses it judges.

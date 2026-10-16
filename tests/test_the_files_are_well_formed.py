@@ -2,21 +2,28 @@
 read, before a pull request is opened: the doctrine, the policies, the
 manifest and the cases, in the terms bugflow's docs/policy-package.md
 gives. The three checks in the skill's scripts/ are run over their own
-cases, and must report each seeded case and no clean one.
+cases, and must report each seeded case and no clean one. The skill's
+copy of the doctrine and the policies must be what tools/compile.py
+writes.
 """
 
+import filecmp
 import re
 import subprocess
+import sys
 import tempfile
 from pathlib import Path
 
 import pytest
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "tools"))
+from compile import compile_skills  # noqa: E402
+
 SKILL = ROOT / "skills" / "repo-gnome-tidy"
 SCRIPTS = SKILL / "scripts"
-POLICIES = sorted((SKILL / "references" / "policies").glob("*.md"))
-DOCTRINE = sorted((SKILL / "references" / "doctrine").glob("*.md"))
+POLICIES = sorted((ROOT / "policies").glob("*.md"))
+DOCTRINE = sorted((ROOT / "doctrine").glob("*.md"))
 CASES = sorted((ROOT / "cases").glob("*/*.md"))
 
 POLICY_REQUIRED = (
@@ -204,6 +211,27 @@ def test_every_skill_carries_the_methodologys_prefix() -> None:
     for skill in (ROOT / "skills").iterdir():
         assert skill.name.startswith("repo-gnome-"), skill.name
         assert (skill / "SKILL.md").is_file()
+
+
+def test_each_skill_holds_what_compile_writes() -> None:
+    with tempfile.TemporaryDirectory() as scratch:
+        for written in compile_skills(Path(scratch)):
+            name = written.parent.name
+            committed = ROOT / "skills" / name / "references"
+            assert committed.is_dir(), f"{name}: run make skills"
+            assert_same_tree(written, committed)
+
+
+def assert_same_tree(left: Path, right: Path) -> None:
+    compared = filecmp.dircmp(left, right)
+    assert not compared.left_only, f"{right}: missing {compared.left_only}; run make skills"
+    assert not compared.right_only, f"{right}: extra {compared.right_only}; run make skills"
+    _, mismatch, errors = filecmp.cmpfiles(
+        left, right, compared.common_files, shallow=False
+    )
+    assert not mismatch and not errors, f"{right}: differs in {mismatch}; run make skills"
+    for name in compared.common_dirs:
+        assert_same_tree(left / name, right / name)
 
 
 # The cases
