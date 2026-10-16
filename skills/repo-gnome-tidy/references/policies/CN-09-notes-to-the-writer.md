@@ -1,7 +1,7 @@
 policy_id: CN-09
 subject: canon
 summary: A document addresses its reader, not whoever tends it next
-model_class: medium
+model_class: large
 evidence: document/file
 quotable_name: document
 graded: yes
@@ -52,3 +52,8 @@ Write each explanation in one sentence. Return no violations when the
 document complies.
 === calibration
 Not measured.
+
+- 2026-10-16, claude-haiku-4-5 as the medium class, on one binding's
+pull requests: reported passages whose explanations said that each one
+complied, before and after the instructions ruled that out. The policy
+runs on the large class since then.
