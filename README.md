@@ -17,7 +17,7 @@ alone:
   tag:
 
       methodologies:
-        - source: git@github.com:ClankaOperatingSystem/repo-gnome.git
+        - source: https://github.com/ClankaOperatingSystem/repo-gnome.git
           ref: TAG
 
   The skills command-line tool copies `skills/repo-gnome-tidy/` into the
@@ -74,3 +74,8 @@ and a case. The tests here check every file against it.
 checks every file against the formats. The three scripts in `scripts/`
 run in any directory, read its Org and Markdown files, and print
 findings as `FILE:LINE: MESSAGE`, exit 1 when there are any.
+
+## Licence
+
+This repository is free software under the GNU General Public License,
+version 3 or any later version. The text is in `COPYING`.
