@@ -8,8 +8,7 @@ description: Tidy a scope's canon against the repo-gnome doctrine, so that its d
 The doctrine is in `references/doctrine/`, beside this file; its
 policies are in `references/policies/`, one judgement each, and the
 checks in `scripts/` answer three of them. Read the doctrine at the
-start, so the clauses in force are the current ones. Do not work from
-memory of them.
+start, so the clauses in force are the current ones.
 
 Run it when asked. It is heavy for a whole scope; a pass over one
 document or one session's changes is light.
