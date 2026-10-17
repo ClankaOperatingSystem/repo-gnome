@@ -78,6 +78,32 @@ checks every file against the formats. The three scripts in `scripts/`
 run in any directory, read its Org and Markdown files, and print
 findings as `FILE:LINE: MESSAGE`, exit 1 when there are any.
 
+## Website
+
+[Read the current standards](https://clankaoperatingsystem.github.io/repo-gnome/).
+The site includes worked examples and paths for contributors, maintainers and
+people assessing the standards. Its reader guidance is in `site.toml`.
+
+`requirements-site.txt` pins the renderer release and its wheel checksum.
+To build locally, install that file and run this from a clean checkout:
+
+```sh
+python -m pip install -r requirements-site.txt
+gnome-site . _site --title repo-gnome \
+  --repository https://github.com/ClankaOperatingSystem/repo-gnome \
+  --revision "$(git rev-parse HEAD)" --content site.toml
+```
+
+The output directory must be new or empty. The Website workflow runs the source
+checks and builds a downloadable `repo-gnome-site` artifact for each pull request.
+Download and extract that artifact, then open `index.html` to review it.
+Changes on `master` replace the current GitHub Pages site after the checks pass.
+The repository's Pages publishing source is GitHub Actions.
+
+The gnome's maintainers own `site.toml`, the renderer pin and the workflow.
+Review the preview when changing standards or upgrading the renderer. Source
+links identify the rendered commit; policy routes and clause anchors stay stable.
+
 ## Licence
 
 This repository is free software under the GNU General Public License,
