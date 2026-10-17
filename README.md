@@ -5,16 +5,20 @@ its work. A doctrine of clauses, a policy for each judgement, cases that
 test the judge, three checks that need no model, and a skill that applies
 them.
 
-This repository is a gnome: it implements the gnome protocol, which
-bugflow's [policy package](https://github.com/bugflow/bugflow/blob/master/docs/policy-package.md) specifies.
-[What a gnome is](https://github.com/bugflow/bugflow/blob/master/docs/gnomes.md) explains a gnome's parts, who reads each,
-and a maintainer's tasks.
+This repository is a gnome: a methodology that also holds a doctrine,
+its policies and its cases. bugflow's
+[What a gnome is](https://github.com/bugflow/bugflow/blob/master/docs/gnomes.md)
+defines a gnome and a maintainer's tasks, its
+[policy package](https://github.com/bugflow/bugflow/blob/master/docs/policy-package.md)
+specifies each file, and its
+[words](https://github.com/bugflow/bugflow/blob/master/docs/words.md)
+give each term one line.
 
 Two things read this repository and nothing in it is written for one
 alone:
 
 - **A garden** declares it as a methodology in its configuration, at a
-  tag:
+  tag, as ClankOS's `clankos-run help install` says:
 
       methodologies:
         - source: https://github.com/ClankaOperatingSystem/repo-gnome.git
@@ -25,8 +29,9 @@ alone:
   `scripts/`.
 
 - **A bugflow server** judges pull requests by it when a binding
-  repository deploys it, with `declarations.toml` saying which
-  repositories it applies to.
+  deploys it. bugflow's
+  [review document](https://github.com/bugflow/bugflow/blob/master/docs/review.md)
+  says what a review writes and where each part comes from.
 
 ## What is here
 
@@ -43,32 +48,9 @@ alone:
 | `tools/compile.py` | What `make skills` runs |
 | `tests/` | The checks that every file is in the format the consumers read |
 
-The doctrine and the policies are kept in `doctrine/` and `policies/`.
-The skills command-line tool copies a skill's directory and nothing
-outside it, so the skill carries a copy of both in its `references/`.
-After a change in `doctrine/` or `policies/`, run `make skills`. The
-tests fail if the copy is out of date.
-
-## Words
-
-- Doctrine: the standard, in `doctrine/`, joined in filename order.
-- Clause: one rule of the doctrine, with an id such as `CANON-3`. An id is
-  never reused.
-- Policy: one question asked about a document, and the clauses it judges.
-  A policy whose header says `implemented: check` is answered by the
-  script its instructions name, in `scripts/`, not by a model.
-- Subject: the evidence a policy reads. `document/file` is one document;
-  `scope/canon` is every document of a scope, which a pull request judge
-  does not render.
-- Case: an example document with the answer a correct judge gives it. A
-  `clean` case expects nothing; a `seeded` case expects one clause.
-- Finding: one thing a judge or a check reports, quoting the words at
-  fault and citing a clause, graded `warn` or `fail`.
-
-## The formats
-
-The [policy package](https://github.com/bugflow/bugflow/blob/master/docs/policy-package.md) specifies the manifest, a policy file
-and a case. The tests here check every file against it.
+`doctrine/` and `policies/` are the originals. After a change in
+either, run `make skills`, which writes the skill's copy in its
+`references/`; the tests fail if the copy is out of date.
 
 ## Checks
 
