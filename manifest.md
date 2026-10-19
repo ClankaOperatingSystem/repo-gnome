@@ -1,7 +1,7 @@
 agent_id: repository
 summary: What a repository's maintained documents say, and whether they state the present
-subjects: document/file, scope/canon
-policies: CN-01, CN-02, CN-03, CN-04, CN-05, CN-06, CN-07, CN-08, CN-09, CN-10
+subjects: document/file, document/glossary, scope/canon
+policies: CN-01, CN-02, CN-03, CN-04, CN-05, CN-06, CN-07, CN-08, CN-09, CN-10, CN-11
 ---
 
 This file describes the gnome to whatever reads it. The lines above
