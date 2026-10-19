@@ -51,7 +51,7 @@ POLICY_REQUIRED = (
 )
 POLICY_OPTIONAL = ("ceiling", "implemented")
 MODEL_CLASSES = ("none", "small", "medium", "large")
-SUBJECTS = ("document/file", "scope/canon")
+SUBJECTS = ("document/file", "document/glossary", "scope/canon")
 GRADES = ("warn", "fail")
 CASE_LINES = ("title", "expect", "grade", "why", "path")
 CLAUSE = re.compile(r"\*\*([A-Z]+-\d+)\. (.+?)\.\*\*")

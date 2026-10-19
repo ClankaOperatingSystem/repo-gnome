@@ -74,6 +74,13 @@ advisable", "forbidden except within a collection". The cases are a table
 with one row each, saying what to do in that case. Degrees of force leave
 with the prose.
 
+**CANON-12. A word defined away from its home.** A document says what a
+word means when the words documents give that word a home elsewhere: "A
+gnome is a repository that holds an editorial standard." Each definition
+drifts from the home's, and a reader who finds one does not know whether
+it is the one maintained. A word has one home, which its owner's words
+document names. Another document uses the word, or links to its home.
+
 ## What stays
 
 Present-tense statements of what a thing is, what it is for, how it works,
