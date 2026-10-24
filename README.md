@@ -1,9 +1,9 @@
 # repo-gnome
 
 Standards for canon: the documents a repository maintains and reads to do
-its work. A doctrine of clauses, a policy for each judgement, cases that
-test the judge, three checks that need no model, and a skill that applies
-them.
+its work. This repository holds a doctrine of clauses, a policy for each
+judgement, cases that test the judge, three checks that need no model, and
+a skill that applies them.
 
 This repository is a gnome: a methodology that also holds a doctrine,
 its policies and its cases. bugflow's
