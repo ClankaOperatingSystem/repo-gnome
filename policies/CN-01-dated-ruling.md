@@ -18,5 +18,7 @@ line once, under CANON-2, graded warn.
 
 A date in a task heading, a property drawer or a timestamp is not reported.
 A date in a sentence that does not name a decision is not reported.
+Text inside quotation marks is not read, so a sentence that quotes a
+dated ruling as an example is not reported.
 === calibration
 Not measured.
