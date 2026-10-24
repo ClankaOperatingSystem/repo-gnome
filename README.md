@@ -46,7 +46,7 @@ alone:
 | `cases/CN-*/*.md` | The cases of each policy: a document and the answer a correct judge gives |
 | `manifest.md` | The gnome's id, subjects and policies |
 | `tools/compile.py` | What `make skills` runs |
-| `tests/` | The checks that every file is in the format the consumers read |
+| `tests/` | The tests of the formats the consumers read |
 
 `doctrine/` and `policies/` are the originals. After a change in
 either, run `make skills`, which writes the skill's copy in its
