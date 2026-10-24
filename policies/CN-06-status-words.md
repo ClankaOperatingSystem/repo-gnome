@@ -19,5 +19,7 @@ be", "await", "awaits", "untested", "never run", "for now", "interim",
 
 A line inside a task, that is, under a heading with a TODO keyword, is not
 reported: tasks hold status. A line in a code block is not reported.
+Text inside quotation marks is not read, so a status word quoted as a
+word is not reported.
 === calibration
 Not measured.

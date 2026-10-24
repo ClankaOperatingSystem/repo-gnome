@@ -19,5 +19,7 @@ quotation mark follows on the same line.
 
 A line inside a task is not reported. A line in a code block or a quote
 block is not reported.
+Text inside quotation marks is not read. The check sees the frame
+around a quotation and not the words inside it.
 === calibration
 Not measured.
