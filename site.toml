@@ -1,7 +1,7 @@
 schema = 1
-introduction = "Keep maintained documents useful to the people who read them. Inspect the standards, compare examples and improve a rule when it gives the wrong advice."
-scope = "repo-gnome addresses maintained documents: whether they state the present, give each fact a home and speak to their readers. Its doctrine, examples and checks are available for inspection."
-outside_scope = "These standards do not establish that a document's technical claims are true or that the software it describes works correctly. Those require evidence from the subject itself."
+introduction = "Standards for the documents a repository maintains: that they say what is, in the present tense, with each fact in one home."
+scope = "repo-gnome judges canon: the documents a repository maintains and reads to do its work. Its doctrine says what leaves canon and what stays, each policy says how one judgement is made, and each case shows the answer a correct judge gives."
+outside_scope = "These standards judge how a document states what it knows. Whether what it states is true, and whether the software it describes works, is settled by evidence from the subject itself."
 
 [resources]
 glossary = "https://github.com/bugflow/bugflow/blob/master/docs/words.md"
@@ -18,7 +18,7 @@ title = "Address the document's reader"
 policy = "CN-09"
 before = "seeded-01-learn-from-use"
 after = "clean-01-the-reader-alone"
-explanation = "The first case adds instructions for the skill's future maintainer. The second keeps the instructions for the person using the skill. Compare the passages and their expected judgements."
+explanation = "The seeded case adds instructions for the skill's future maintainer. The clean case keeps the instructions for the person using the skill. Each case's why line says what makes it clean or seeded."
 
 [[checks]]
 title = "Find dated rulings in maintained prose"
@@ -26,7 +26,7 @@ audience = "author"
 policy = "CN-01"
 command = "cd /path/to/your/work\n/path/to/repo-gnome/skills/repo-gnome-tidy/scripts/check-dated-ruling"
 source = "skills/repo-gnome-tidy/scripts/check-dated-ruling"
-purpose = "This script reports prose that describes a decision together with a date. Its policy explains the exclusions."
+purpose = "Reports a sentence that names a decision and a date together, under CANON-2. The policy says what is left out."
 
 [[checks]]
 title = "Find task-status words in maintained prose"
@@ -34,7 +34,7 @@ audience = "author"
 policy = "CN-06"
 command = "cd /path/to/your/work\n/path/to/repo-gnome/skills/repo-gnome-tidy/scripts/check-status-words"
 source = "skills/repo-gnome-tidy/scripts/check-status-words"
-purpose = "This script checks for task-status words outside the task structures that its policy permits."
+purpose = "Reports a status word outside a task, under CANON-7. The policy lists the words."
 
 [[checks]]
 title = "Find appeals to a maintainer's authority"
@@ -42,10 +42,10 @@ audience = "author"
 policy = "CN-07"
 command = "cd /path/to/your/work\n/path/to/repo-gnome/skills/repo-gnome-tidy/scripts/check-quoted-authority"
 source = "skills/repo-gnome-tidy/scripts/check-quoted-authority"
-purpose = "This script checks for quoted authority in maintained prose. Its policy states the rule and its limits."
+purpose = "Reports a quotation framed as its author's authority, under CANON-8. The policy lists the frames."
 
 [[checks]]
 title = "Validate a standards change"
 command = "uv run --with pytest pytest -q"
 source = "tests/test_the_files_are_well_formed.py"
-purpose = "Check the source formats, case expectations and the deterministic checks against their fixtures."
+purpose = "Runs the format tests, the checks over their cases and the comparison of the skill's copies with the root."
