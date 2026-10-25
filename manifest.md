@@ -2,6 +2,7 @@ agent_id: repository
 summary: What a repository's maintained documents say, and whether they state the present
 subjects: document/file, document/glossary, scope/canon
 policies: CN-01, CN-02, CN-03, CN-04, CN-05, CN-06, CN-07, CN-08, CN-09, CN-10, CN-11
+site: https://clankaoperatingsystem.github.io/repo-gnome/
 ---
 
 This file describes the gnome to whatever reads it. The lines above
@@ -16,3 +17,5 @@ the text below is for a person.
 - `policies` lists every policy. A policy judges a repository on a server
   only when the server's declarations also list it for that repository;
   the repo-gnome-tidy skill applies them all.
+- `site` is the address these pages are published at. A server's comment
+  links each clause it cites to the clause's section of the doctrine page.
